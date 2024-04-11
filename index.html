@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="./assets/style.css" /> -->
+</head>
+<style>
+  body {
+    max-width: 100%;
+    text-align: right;
+    background-color: rgb(90, 165, 67);
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+  }
+
+  
+
+  .logoImg {
+    width: 200px;
+  }
+
+  .dotImg {
+    width: 30px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    margin: 90px 0 50px 0;
+    align-items: center;
+  }
+
+  /* input {
+    margin: 0 auto;
+    padding: 5px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 18px;
+  } */
+  input {
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  background-color: #e9e7e7;
+  /* box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3); */
+  transition: 300ms ease-in-out;
+  width: 300px;
+  height: 70px;
+  text-align: center;
+  font-size: x-large;
+}
+
+input:focus {
+  background-color: white;
+  transform: scale(1.05);
+  /* box-shadow: 13px 13px 100px #969696,-13px -13px 100px #ffffff; */
+}
+
+  button {
+    border: rgb(133, 22, 22) solid 5px;
+    box-shadow: rgb(73, 73, 73) 5px 5px 5px;
+    padding: 8px 10px;
+    font-size: 20px;
+    border-radius: 25px;
+    background-color: rgb(71, 128, 54);
+    color: #fff;
+    cursor: pointer;
+    height: 60px;
+  }
+
+  .textdiv {
+    padding: 20px;
+    width: 100%;
+    max-width: 80%;
+    margin: 10px 100px;
+  }
+
+  .btnimg {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .imgg {
+    width: 40%;
+    height: 40%;
+    margin: 0;
+  }
+
+  /* Media query for screens smaller than 768px */
+  @media screen and (max-width: 768px) {
+    .textdiv {
+
+      margin: 10px 50px;
+    }
+  }
+
+  /* Media query for screens smaller than 480px */
+  @media screen and (max-width: 480px) {
+    .textdiv {
+      padding: 20px 10px;
+      margin: 0px;
+    }
+
+    input {
+      width: 200px;
+
+    }
+
+    .imgg {
+      width: 50%;
+      height: 50%;
+      margin: 0;
+    }
+
+  }
+</style>
+
+<body>
+  <div class="textdiv">
+    <nav class="navbar">
+      <ul>
+        <li><img src="./logobg.png" alt="logo" class="logoImg" /></li>
+        <li>
+          <img src="./images/switch.png" alt="icon" class="dotImg" />
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <input type="text" id="inputField" placeholder="Enter game name"/>
+      <input type="date" name="" id="" class="" />
+    </div>
+    <div class="btnimg">
+      <img src="./images/startdesign.png" alt="logo" class="imgg" />
+      <!-- <a href="./secondpage.html"> -->
+        <div>
+
+          <button class="" role="button" id="nextButton" onclick="runBothFunctions()">Next ></button>
+        </div>
+      <!-- </a> -->
+    </div>
+  </div> 
+
+  <!-- <input type="text" id="inputField" placeholder="Enter game name">
+  <button id="nextButton" onclick="next()">Next</button> -->
+
+  <script>
+    // Function to validate input
+    function validateInput(value) {
+      return ['commercial', 'bomaderry', 'headlands'].includes(value.toLowerCase()); // Check if value is one of 'abi', 'bci', or 'cdi'
+    }
+
+    // Function to handle input field change
+    function handleInputChange() {
+      var inputValue = document.getElementById("inputField").value.toLowerCase();
+      var isValid = validateInput(inputValue);
+      if (isValid) {
+        document.getElementById("nextButton").disabled = false; // Enable button if input is valid
+      } else {
+        // alert("Please enter a correct game name: 'abi', 'bci', or 'cdi'."); // Show alert for invalid input
+        document.getElementById("nextButton").disabled = true; // Disable button if input is invalid
+      }
+    }
+
+    // Function to be called when Next button is clicked
+    function next() {
+      var inputValue = document.getElementById("inputField").value.toLowerCase();
+      if (validateInput(inputValue)) {
+        // Redirect to the next page
+        window.location.href = "NewUi.html?game=" + encodeURIComponent(inputValue);
+        // + inputValue ;
+      } else {
+        // Stay on the same page
+        alert("Please enter a correct game name: 'commercial', 'bomaderry', or 'headlands'");
+      }
+    }
+    function runBothFunctions() {
+      next();
+      spreadCards()
+    }
+
+    // Add event listener for input field change
+    document.getElementById("inputField").addEventListener("input", handleInputChange);
+  </script>
+</body>
+
+</html>

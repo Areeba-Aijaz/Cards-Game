@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(90, 165, 67);
+            position: relative;
+            height: 620px;
+            width: 1250px !important;
+            margin: 0 auto;
+            overflow: hidden;
+          
+        }
+
+        h1 {
+            position: fixed;
+            top: 20%;
+            left: 20%;
+            font-weight: bold;
+            font-size: 60px;
+            color: antiquewhite;
+            opacity: 0.5;
+        }
+
+        .ImageCard {
+            height: 200px;
+            position: fixed;
+            top: 60%;
+            right: 10%;
+            cursor: pointer;
+            z-index: 9999;
+        }
+
+        .ImageLogo {
+            width: 280px;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+            list-style-type: none;
+        }
+
+
+        /* cards styling */
+
+        .flip-card {
+            background-color: transparent;
+            width: 100px;
+            height: 100px;
+            perspective: 1000px;
+            transition: transform 0.6s;
+        }
+
+        .flip-card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        /* .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        } */
+
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            /* -webkit-backface-visibility: hidden !important; */
+            backface-visibility: hidden !important;
+        }
+
+        .flip-card-front {
+            background-color: #bbb;
+            color: black;
+        }
+
+        .flip-card-back {
+            background-color: #2980b9;
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .cont {
+            /* position: absolute;
+            bottom: 0;
+            right: 0; */
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+
+<body onload="collectFunc()">
+
+    <ul>
+        <li><img src="./logobg.png" alt="logo" class="ImageLogo" /></li>
+        <li class="players" id="gameName"></li>
+
+    </ul>
+
+    <div>
+
+        <h1 id="heading">Click the Desk to spread cards</h1>
+        <img src="./images/back.jpeg" alt="" class="ImageCard" id="CardImage" onclick="Multiple()" />
+    </div>
+
+
+
+
+
+    <!-- second Div -->
+
+
+
+    <div class="cont" id="count">
+
+        <div class="card flip-card " onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card " onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card " onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card " onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card " onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card " onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card " onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card " onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card only" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+        <div class="card flip-card" onclick="performFunction()">
+            <div class="card-inner flip-card-inner">
+                <div class="card-front flip-card-front">
+
+                    <img src="./images/back.jpeg" alt="Front Image" style="width: 100px; height: 100px" />
+                </div>
+                <div class="card-back flip-card-back">
+
+                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+
+
+
+
+        function getQueryParam(parameterName) {
+            var queryString = window.location.search.substring(1);
+            var parameters = queryString.split('&');
+
+            for (var i = 0; i < parameters.length; i++) {
+                var parameter = parameters[i].split('=');
+                if (parameter[0] === parameterName) {
+                    return decodeURIComponent(parameter[1]);
+                }
+            }
+            return null;
+        }
+
+        // Get the value of the 'game' query parameter from the URL
+        var gameName = getQueryParam('game');
+
+        // Determine the number to display based on the game name
+        var numberToDisplay;
+        if (gameName === 'commercial') {
+            numberToDisplay = '7 Players';
+        } else if (gameName === 'bomaderry') {
+            numberToDisplay = '13 Players';
+        } else if (gameName === 'headlands') {
+            numberToDisplay = '6 Players';
+        } else {
+            numberToDisplay = 'Unknown';
+        }
+
+        document.getElementById('gameName').innerText = numberToDisplay;
+
+        function Multiple() {
+            HideFirstDiv()
+            SpreadFunc()
+
+        }
+
+        function HideFirstDiv() {
+            document.getElementById('heading').style.display = 'none';
+         }
+
+
+
+        function collectFunc() {
+            const container = document.getElementById('count');
+            const cards = container.querySelectorAll('.flip-card');
+            const firstCard = container.querySelector('.only');
+
+            // Get the position of the first card
+            const firstCardRect = firstCard.getBoundingClientRect();
+
+            // Set the position for all other cards
+            cards.forEach(card => {
+                const cardRect = card.getBoundingClientRect();
+                const offsetX = firstCardRect.left - cardRect.left;
+                const offsetY = firstCardRect.top - cardRect.top;
+                card.style.transition = 'transform 0.5s ease';
+                card.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+            });
+
+            // Store spread state in localStorage
+            localStorage.setItem('cardsSpread', 'true');
+        }
+
+        function flipCard(card) {
+            card.classList.toggle('flipped');
+
+
+            // Store collect state in localStorage
+            localStorage.removeItem('cardsSpread');
+        }
+
+        // Check localStorage on page load
+        window.addEventListener('load', function () {
+            const cardsSpread = localStorage.getItem('cardsSpread');
+            if (cardsSpread === 'true') {
+                collectFunc(); // Spread cards if previously spread
+            }
+        });
+
+
+        function SpreadFunc() {
+            const cards = document.querySelectorAll(".flip-card");
+            cards.forEach((card, index) => {
+                card.style.transition = `transform 0.5s ease ${index * 0.1}s`;
+                card.style.transform = "translate(0, 0)";
+            });
+            document.getElementById('CardImage').style.display = 'none';
+
+        }
+
+        function flipCard(card) {
+            card.classList.toggle('flipped');
+
+
+            // Store collect state in localStorage
+            localStorage.removeItem('cardsSpread');
+        }
+
+
+        
+
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        var randomNumber13 = getRandomNumber(1, 13);
+        var randomNumber7 = getRandomNumber(1, 7);
+        var randomNumber6 = getRandomNumber(1, 6);
+
+        let commercialPlayersName = [
+            "",
+            'Lucy Sweet',
+            'Tony Fleith',
+            'Joe Brown',
+            'Troy Sivan',
+            'Lilly Di',
+            'Moah Gibs',
+            'Mitch Fanning']
+        let bomaderryPlayersName = [
+            "",
+
+            'Jadan Roxburgh',
+            'Maugan Cohen',
+            'John Bling',
+            'Lucy Sweet',
+            'Tony Fleith',
+            'Joe Brown',
+            'Troy Sivan',
+            'Lilly Di',
+            'Moah Gibs',
+            'Mitch Fanning',
+            'Stece Smith',
+            'Debbie Monie',
+            'Philip York']
+        let headlandsPlayersName = [
+            "",
+
+            'Moah Gibs',
+            'Mitch Fanning',
+            'Stece Smith',
+            'Debbie Monie',
+            'Philip York',
+            'Lucy Sweet']
+
+        function performFunction() {
+            const card = event.currentTarget;
+            if (numberToDisplay === '7 Players') {
+                selectWinnerFrom7Players(card)
+            } else if (numberToDisplay === '13 Players') {
+                selectWinnerFrom13Players(card)
+            }
+            else if (numberToDisplay === '6 Players') {
+                selectWinnerFrom6Players(card)
+            }
+        }
+
+
+        let heading = document.createElement("p");
+        var randomNumber = Math.floor(Math.random() * 10) + 1;
+
+
+        function selectWinnerFrom13Players(card) {
+            card.querySelector(".card-inner").style.transform = "rotateY(180deg)";
+
+            setTimeout(function () {
+
+                var overlay = document.createElement("div");
+                overlay.style.position = "fixed";
+                overlay.style.top = "0";
+                overlay.style.left = "0";
+                overlay.style.width = "100%";
+                overlay.style.height = "100%";
+                overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)"; // Semi-transparent black background
+                overlay.style.zIndex = "5";
+
+                // Create a div element
+                var centeredDiv = document.createElement("div");
+
+                // Set styles for the centered div
+                centeredDiv.style.position = "fixed";
+                centeredDiv.style.top = "50%";
+                centeredDiv.style.left = "50%";
+                centeredDiv.style.transform = "translate(-50%, -50%)";
+                centeredDiv.style.zIndex = "10";
+
+                // Create the first image element
+                var image1 = document.createElement("img");
+                image1.src = "./images/win.png"; // Update with your image path
+                image1.style.position = "absolute";
+                image1.style.top = "-220px"; // Adjust position as needed
+                image1.style.right = "-220px"; // Adjust position as needed
+                image1.style.zIndex = "20";
+                image1.style.width = "500px";
+
+                // Create the second image element
+                var image2 = document.createElement("img");
+                image2.src = "./images/frontimg.jpg"; // Update with your image path
+                image2.style.position = "absolute";
+                image2.style.bottom = "-150px"; // Adjust position as needed
+                image2.style.right = "-50px"; // Adjust position as needed
+                image2.style.zIndex = "30";
+                image2.style.width = "200px";
+
+                var div2 = document.createElement("div");
+                div2.style.position = "absolute";
+                div2.style.top = "180px";
+                div2.style.right = "160px";
+                div2.innerText = "You are win";
+                div2.style.textAlign = "center";
+                div2.style.color = "skyblue";
+                div2.style.width = "50px";
+                div2.style.height = "50px";
+                div2.style.background = "skyblue";
+
+                var div3 = document.createElement("div");
+                div3.style.position = "absolute";
+                div3.style.top = "210px";
+                div3.style.right = "-110px";
+                div3.innerText = "You are win";
+                div3.style.textAlign = "center";
+                div3.style.color = "skyblue";
+                div3.style.width = "50px";
+                div3.style.height = "50px";
+                div3.style.background = "skyblue";
+
+
+                // Create the heading element
+                var heading = document.createElement("h1");
+                heading.style.position = "absolute";
+                heading.style.top = "150px";
+                heading.style.left = "-180px";
+
+                // heading.style.right = "-850px";
+                heading.innerText = "Player " + bomaderryPlayersName[randomNumber13] + " is Winner";
+                heading.style.textAlign = "center";
+                heading.style.color = "black";
+                heading.style.width = "280px";
+                heading.style.fontSize = "38px";
+                heading.style.opacity = "0.9";
+
+
+                heading.style.background = "white";
+                heading.style.zIndex = "80";
+
+                // Append the images and heading to the centered div
+                centeredDiv.appendChild(image1);
+                centeredDiv.appendChild(image2);
+                centeredDiv.appendChild(heading);
+                centeredDiv.appendChild(div2);
+                centeredDiv.appendChild(div3);
+
+                // Append the centered div to the document body
+                document.body.appendChild(overlay);
+                document.body.appendChild(centeredDiv);
+
+                // Start confetti animation
+                const W = window.innerWidth;
+                const H = window.innerHeight;
+                const canvas = document.createElement("canvas");
+                const context = canvas.getContext("2d");
+                const maxConfettis = 150;
+                const particles = [];
+                let isConfettiRunning = false;
+
+                const possibleColors = [
+                    "DodgerBlue",
+                    "OliveDrab",
+                    "Gold",
+                    "Pink",
+                    "SlateBlue",
+                    "LightBlue",
+                    "Gold",
+                    "Violet",
+                    "PaleGreen",
+                    "SteelBlue",
+                    "SandyBrown",
+                    "Chocolate",
+                    "Crimson"
+                ];
+
+                function randomFromTo(from, to) {
+                    return Math.floor(Math.random() * (to - from + 1) + from);
+                }
+
+                function confettiParticle() {
+                    this.x = Math.random() * W; // x
+                    this.y = Math.random() * H - H; // y
+                    this.r = randomFromTo(11, 33); // radius
+                    this.d = Math.random() * maxConfettis + 11;
+                    this.color =
+                        possibleColors[Math.floor(Math.random() * possibleColors.length)];
+                    this.tilt = Math.floor(Math.random() * 33) - 11;
+                    this.tiltAngleIncremental = Math.random() * 0.07 + 0.05;
+                    this.tiltAngle = 0;
+
+                    this.draw = function () {
+                        context.beginPath();
+                        context.lineWidth = this.r / 2;
+                        context.strokeStyle = this.color;
+                        context.moveTo(this.x + this.tilt + this.r / 3, this.y);
+                        context.lineTo(this.x + this.tilt, this.y + this.tilt + this.r / 5);
+                        return context.stroke();
+                    };
+                }
+
+                function Draw() {
+                    const results = [];
+
+                    // Magical recursive functional love
+                    requestAnimationFrame(Draw);
+
+                    context.clearRect(0, 0, W, H);
+
+                    for (var i = 0; i < maxConfettis; i++) {
+                        results.push(particles[i].draw());
+                    }
+
+                    let particle = {};
+                    let remainingFlakes = 0;
+                    for (var i = 0; i < maxConfettis; i++) {
+                        particle = particles[i];
+
+                        particle.tiltAngle += particle.tiltAngleIncremental;
+                        particle.y += (Math.cos(particle.d) + 3 + particle.r / 2) / 2;
+                        particle.tilt = Math.sin(particle.tiltAngle - i / 3) * 15;
+
+                        if (particle.y <= H) remainingFlakes++;
+
+                        // If a confetti has fluttered out of view,
+                        // bring it back to above the viewport and let if re-fall.
+                        if (particle.x > W + 30 || particle.x < -30 || particle.y > H) {
+                            particle.x = Math.random() * W;
+                            particle.y = -30;
+                            particle.tilt = Math.floor(Math.random() * 10) - 20;
+                        }
+                    }
+
+                    return results;
+                }
+
+                window.addEventListener(
+                    "resize",
+                    function () {
+                        W = window.innerWidth;
+                        H = window.innerHeight;
+                        canvas.width = W;
+                        canvas.height = H;
+                    },
+                    false
+                );
+
+                // Push new confetti objects to `particles[]`
+                for (var i = 0; i < maxConfettis; i++) {
+                    particles.push(new confettiParticle());
+                }
+
+                // Initialize
+                canvas.width = W;
+                canvas.height = H;
+                canvas.style.position = "fixed";
+                canvas.style.top = "0";
+                canvas.style.left = "0";
+                canvas.style.zIndex = "9999"; // Ensure confetti is on top
+                document.body.appendChild(canvas);
+
+                Draw();
+
+            }, 2000);
+        }
+
+
+
+
+
+
+        function selectWinnerFrom7Players(card) {
+            card.querySelector(".card-inner").style.transform = "rotateY(180deg)";
+
+            setTimeout(function () {
+
+                var overlay = document.createElement("div");
+                overlay.style.position = "fixed";
+                overlay.style.top = "0";
+                overlay.style.left = "0";
+                overlay.style.width = "100%";
+                overlay.style.height = "100%";
+                overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)"; // Semi-transparent black background
+                overlay.style.zIndex = "5";
+
+                // Create a div element
+                var centeredDiv = document.createElement("div");
+
+                // Set styles for the centered div
+                centeredDiv.style.position = "fixed";
+                centeredDiv.style.top = "50%";
+                centeredDiv.style.left = "50%";
+                centeredDiv.style.transform = "translate(-50%, -50%)";
+                centeredDiv.style.zIndex = "10";
+
+                // Create the first image element
+                var image1 = document.createElement("img");
+                image1.src = "./images/win.png"; // Update with your image path
+                image1.style.position = "absolute";
+                image1.style.top = "-220px"; // Adjust position as needed
+                image1.style.right = "-220px"; // Adjust position as needed
+                image1.style.zIndex = "20";
+                image1.style.width = "500px";
+
+                // Create the second image element
+                var image2 = document.createElement("img");
+                image2.src = "./images/frontimg.jpg"; // Update with your image path
+                image2.style.position = "absolute";
+                image2.style.bottom = "-150px"; // Adjust position as needed
+                image2.style.right = "-50px"; // Adjust position as needed
+                image2.style.zIndex = "30";
+                image2.style.width = "200px";
+
+                var div2 = document.createElement("div");
+                div2.style.position = "absolute";
+                div2.style.top = "180px";
+                div2.style.right = "160px";
+                div2.innerText = "You are win";
+                div2.style.textAlign = "center";
+                div2.style.color = "skyblue";
+                div2.style.width = "50px";
+                div2.style.height = "50px";
+                div2.style.background = "skyblue";
+
+                var div3 = document.createElement("div");
+                div3.style.position = "absolute";
+                div3.style.top = "210px";
+                div3.style.right = "-110px";
+                div3.innerText = "You are win";
+                div3.style.textAlign = "center";
+                div3.style.color = "skyblue";
+                div3.style.width = "50px";
+                div3.style.height = "50px";
+                div3.style.background = "skyblue";
+
+
+                // Create the heading element
+                var heading = document.createElement("h1");
+                heading.style.position = "absolute";
+                heading.style.top = "150px";
+                heading.style.left = "-180px";
+
+                // heading.style.right = "-850px";
+                heading.innerText = "Player " + commercialPlayersName[randomNumber7] + " is Winner";
+                heading.style.textAlign = "center";
+                heading.style.color = "black";
+                heading.style.width = "280px";
+                heading.style.fontSize = "38px";
+                heading.style.opacity = "0.9";
+
+
+                heading.style.background = "white";
+                heading.style.zIndex = "80";
+
+                // Append the images and heading to the centered div
+                centeredDiv.appendChild(image1);
+                centeredDiv.appendChild(image2);
+                centeredDiv.appendChild(heading);
+                centeredDiv.appendChild(div2);
+                centeredDiv.appendChild(div3);
+
+                // Append the centered div to the document body
+                document.body.appendChild(overlay);
+                document.body.appendChild(centeredDiv);
+
+                // Start confetti animation
+                const W = window.innerWidth;
+                const H = window.innerHeight;
+                const canvas = document.createElement("canvas");
+                const context = canvas.getContext("2d");
+                const maxConfettis = 150;
+                const particles = [];
+                let isConfettiRunning = false;
+
+                const possibleColors = [
+                    "DodgerBlue",
+                    "OliveDrab",
+                    "Gold",
+                    "Pink",
+                    "SlateBlue",
+                    "LightBlue",
+                    "Gold",
+                    "Violet",
+                    "PaleGreen",
+                    "SteelBlue",
+                    "SandyBrown",
+                    "Chocolate",
+                    "Crimson"
+                ];
+
+                function randomFromTo(from, to) {
+                    return Math.floor(Math.random() * (to - from + 1) + from);
+                }
+
+                function confettiParticle() {
+                    this.x = Math.random() * W; // x
+                    this.y = Math.random() * H - H; // y
+                    this.r = randomFromTo(11, 33); // radius
+                    this.d = Math.random() * maxConfettis + 11;
+                    this.color =
+                        possibleColors[Math.floor(Math.random() * possibleColors.length)];
+                    this.tilt = Math.floor(Math.random() * 33) - 11;
+                    this.tiltAngleIncremental = Math.random() * 0.07 + 0.05;
+                    this.tiltAngle = 0;
+
+                    this.draw = function () {
+                        context.beginPath();
+                        context.lineWidth = this.r / 2;
+                        context.strokeStyle = this.color;
+                        context.moveTo(this.x + this.tilt + this.r / 3, this.y);
+                        context.lineTo(this.x + this.tilt, this.y + this.tilt + this.r / 5);
+                        return context.stroke();
+                    };
+                }
+
+                function Draw() {
+                    const results = [];
+
+                    // Magical recursive functional love
+                    requestAnimationFrame(Draw);
+
+                    context.clearRect(0, 0, W, H);
+
+                    for (var i = 0; i < maxConfettis; i++) {
+                        results.push(particles[i].draw());
+                    }
+
+                    let particle = {};
+                    let remainingFlakes = 0;
+                    for (var i = 0; i < maxConfettis; i++) {
+                        particle = particles[i];
+
+                        particle.tiltAngle += particle.tiltAngleIncremental;
+                        particle.y += (Math.cos(particle.d) + 3 + particle.r / 2) / 2;
+                        particle.tilt = Math.sin(particle.tiltAngle - i / 3) * 15;
+
+                        if (particle.y <= H) remainingFlakes++;
+
+                        // If a confetti has fluttered out of view,
+                        // bring it back to above the viewport and let if re-fall.
+                        if (particle.x > W + 30 || particle.x < -30 || particle.y > H) {
+                            particle.x = Math.random() * W;
+                            particle.y = -30;
+                            particle.tilt = Math.floor(Math.random() * 10) - 20;
+                        }
+                    }
+
+                    return results;
+                }
+
+                window.addEventListener(
+                    "resize",
+                    function () {
+                        W = window.innerWidth;
+                        H = window.innerHeight;
+                        canvas.width = W;
+                        canvas.height = H;
+                    },
+                    false
+                );
+
+                // Push new confetti objects to `particles[]`
+                for (var i = 0; i < maxConfettis; i++) {
+                    particles.push(new confettiParticle());
+                }
+
+                // Initialize
+                canvas.width = W;
+                canvas.height = H;
+                canvas.style.position = "fixed";
+                canvas.style.top = "0";
+                canvas.style.left = "0";
+                canvas.style.zIndex = "9999"; // Ensure confetti is on top
+                document.body.appendChild(canvas);
+
+                Draw();
+
+            }, 2000);
+        }
+
+
+
+
+        function selectWinnerFrom6Players(card) {
+            card.querySelector(".card-inner").style.transform = "rotateY(180deg)";
+
+            setTimeout(function () {
+
+                var overlay = document.createElement("div");
+                overlay.style.position = "fixed";
+                overlay.style.top = "0";
+                overlay.style.left = "0";
+                overlay.style.width = "100%";
+                overlay.style.height = "100%";
+                overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)"; // Semi-transparent black background
+                overlay.style.zIndex = "5";
+
+                // Create a div element
+                var centeredDiv = document.createElement("div");
+
+                // Set styles for the centered div
+                centeredDiv.style.position = "fixed";
+                centeredDiv.style.top = "50%";
+                centeredDiv.style.left = "50%";
+                centeredDiv.style.transform = "translate(-50%, -50%)";
+                centeredDiv.style.zIndex = "10";
+
+                // Create the first image element
+                var image1 = document.createElement("img");
+                image1.src = "./images/win.png"; // Update with your image path
+                image1.style.position = "absolute";
+                image1.style.top = "-220px"; // Adjust position as needed
+                image1.style.right = "-220px"; // Adjust position as needed
+                image1.style.zIndex = "20";
+                image1.style.width = "500px";
+
+                // Create the second image element
+                var image2 = document.createElement("img");
+                image2.src = "./images/frontimg.jpg"; // Update with your image path
+                image2.style.position = "absolute";
+                image2.style.bottom = "-150px"; // Adjust position as needed
+                image2.style.right = "-50px"; // Adjust position as needed
+                image2.style.zIndex = "30";
+                image2.style.width = "200px";
+
+                var div2 = document.createElement("div");
+                div2.style.position = "absolute";
+                div2.style.top = "180px";
+                div2.style.right = "160px";
+                div2.innerText = "You are win";
+                div2.style.textAlign = "center";
+                div2.style.color = "skyblue";
+                div2.style.width = "50px";
+                div2.style.height = "50px";
+                div2.style.background = "skyblue";
+
+                var div3 = document.createElement("div");
+                div3.style.position = "absolute";
+                div3.style.top = "210px";
+                div3.style.right = "-110px";
+                div3.innerText = "You are win";
+                div3.style.textAlign = "center";
+                div3.style.color = "skyblue";
+                div3.style.width = "50px";
+                div3.style.height = "50px";
+                div3.style.background = "skyblue";
+
+
+                // Create the heading element
+                var heading = document.createElement("h1");
+                heading.style.position = "absolute";
+                heading.style.top = "150px";
+                heading.style.left = "-180px";
+
+                // heading.style.right = "-850px";
+                heading.innerText = "Player " + headlandsPlayersName[randomNumber6] + " is Winner";
+                heading.style.textAlign = "center";
+                heading.style.color = "black";
+                heading.style.width = "280px";
+                heading.style.fontSize = "38px";
+                heading.style.opacity = "0.9";
+
+
+                heading.style.background = "white";
+                heading.style.zIndex = "80";
+
+                // Append the images and heading to the centered div
+                centeredDiv.appendChild(image1);
+                centeredDiv.appendChild(image2);
+                centeredDiv.appendChild(heading);
+                centeredDiv.appendChild(div2);
+                centeredDiv.appendChild(div3);
+
+                // Append the centered div to the document body
+                document.body.appendChild(overlay);
+                document.body.appendChild(centeredDiv);
+
+                // Start confetti animation
+                const W = window.innerWidth;
+                const H = window.innerHeight;
+                const canvas = document.createElement("canvas");
+                const context = canvas.getContext("2d");
+                const maxConfettis = 150;
+                const particles = [];
+                let isConfettiRunning = false;
+
+                const possibleColors = [
+                    "DodgerBlue",
+                    "OliveDrab",
+                    "Gold",
+                    "Pink",
+                    "SlateBlue",
+                    "LightBlue",
+                    "Gold",
+                    "Violet",
+                    "PaleGreen",
+                    "SteelBlue",
+                    "SandyBrown",
+                    "Chocolate",
+                    "Crimson"
+                ];
+
+                function randomFromTo(from, to) {
+                    return Math.floor(Math.random() * (to - from + 1) + from);
+                }
+
+                function confettiParticle() {
+                    this.x = Math.random() * W; // x
+                    this.y = Math.random() * H - H; // y
+                    this.r = randomFromTo(11, 33); // radius
+                    this.d = Math.random() * maxConfettis + 11;
+                    this.color =
+                        possibleColors[Math.floor(Math.random() * possibleColors.length)];
+                    this.tilt = Math.floor(Math.random() * 33) - 11;
+                    this.tiltAngleIncremental = Math.random() * 0.07 + 0.05;
+                    this.tiltAngle = 0;
+
+                    this.draw = function () {
+                        context.beginPath();
+                        context.lineWidth = this.r / 2;
+                        context.strokeStyle = this.color;
+                        context.moveTo(this.x + this.tilt + this.r / 3, this.y);
+                        context.lineTo(this.x + this.tilt, this.y + this.tilt + this.r / 5);
+                        return context.stroke();
+                    };
+                }
+
+                function Draw() {
+                    const results = [];
+
+                    // Magical recursive functional love
+                    requestAnimationFrame(Draw);
+
+                    context.clearRect(0, 0, W, H);
+
+                    for (var i = 0; i < maxConfettis; i++) {
+                        results.push(particles[i].draw());
+                    }
+
+                    let particle = {};
+                    let remainingFlakes = 0;
+                    for (var i = 0; i < maxConfettis; i++) {
+                        particle = particles[i];
+
+                        particle.tiltAngle += particle.tiltAngleIncremental;
+                        particle.y += (Math.cos(particle.d) + 3 + particle.r / 2) / 2;
+                        particle.tilt = Math.sin(particle.tiltAngle - i / 3) * 15;
+
+                        if (particle.y <= H) remainingFlakes++;
+
+                        // If a confetti has fluttered out of view,
+                        // bring it back to above the viewport and let if re-fall.
+                        if (particle.x > W + 30 || particle.x < -30 || particle.y > H) {
+                            particle.x = Math.random() * W;
+                            particle.y = -30;
+                            particle.tilt = Math.floor(Math.random() * 10) - 20;
+                        }
+                    }
+
+                    return results;
+                }
+
+                window.addEventListener(
+                    "resize",
+                    function () {
+                        W = window.innerWidth;
+                        H = window.innerHeight;
+                        canvas.width = W;
+                        canvas.height = H;
+                    },
+                    false
+                );
+
+                // Push new confetti objects to `particles[]`
+                for (var i = 0; i < maxConfettis; i++) {
+                    particles.push(new confettiParticle());
+                }
+
+                // Initialize
+                canvas.width = W;
+                canvas.height = H;
+                canvas.style.position = "fixed";
+                canvas.style.top = "0";
+                canvas.style.left = "0";
+                canvas.style.zIndex = "9999"; // Ensure confetti is on top
+                document.body.appendChild(canvas);
+
+                Draw();
+
+            }, 2000);
+        }
+
+    </script>
+</body>
+
+</html>
