@@ -18,10 +18,11 @@
 
         h1 {
             position: fixed;
+            font-weight: lighter;
             top: 35%;
             left: 30%;
             font-size: 30px;
-            color: antiquewhite;
+            color: white;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
 
@@ -40,6 +41,8 @@
 
         .players {
             margin-right: 50px;
+            margin-left: 950px;
+
         }
 
         /* Media query for lg screens */
@@ -49,8 +52,8 @@
             }
 
             h1 {
-                left: 12%;
-                font-size: 90px;
+                left: 22%;
+                font-size: 35px;
 
             }
         }
@@ -63,8 +66,8 @@
             }
 
             h1 {
-                left: 12%;
-                font-size: 70px;
+                left: 21%;
+                font-size: 27px;
 
             }
         }
@@ -81,7 +84,26 @@
 
             h1 {
                 left: 10%;
-                font-size: 43px;
+                font-size: 21px;
+
+            }
+        }
+
+        @media only screen and (max-width: 375px) {
+
+            h1 {
+                left: 5%;
+                font-size: 21px;
+
+            }
+        }
+
+        @media only screen and (max-width: 320px) {
+
+            h1 {
+                left: 13%;
+                font-size: 15px;
+
             }
         }
 
@@ -89,7 +111,7 @@
 
 
         ul {
-            display: flex;
+            display: flex !important;
             justify-content: space-between;
             list-style-type: none;
             margin: 40px auto 10px auto;
@@ -160,7 +182,22 @@
             justify-content: center; */
         }
 
-        .contMobile {
+        /* Media query for estralarge screens */
+        @media only screen and (min-width: 1025px) {
+            .contExtraLarge {
+                /* position: absolute;
+                    bottom: 0;
+                    right: 0; */
+                display: flex;
+                flex-wrap: wrap;
+                gap: 7px;
+                justify-content: center;
+
+            }
+        }
+
+
+        .contLarge {
             /* position: absolute;
             bottom: 0;
             right: 0; */
@@ -170,1284 +207,2612 @@
             justify-content: center; */
         }
 
-        /* Media query for estralarge screens */
-        @media only screen and (min-width: 1025px) {
-            .contExtraLarge {
+
+        /* Styles for screens between 600px and 900px */
+        @media only screen and (min-width: 786px) and (max-width: 1024px) {
+            body {
+                background-color: aqua;
+            }
+
+            /* CSS rules for screens with a width between 600px and 900px */
+            /* For example: */
+            .contLarge {
                 /* position: absolute;
-            bottom: 0;
-            right: 0; */
+                    bottom: 0;
+                    right: 0; */
                 display: flex;
                 flex-wrap: wrap;
                 gap: 7px;
                 justify-content: center;
-                
+
             }
         }
 
 
-        /* Media query for large screens */
-        @media only screen and (max-width: 425px) {
-            .contMobile {
+
+        .contMedium {
+            display: none;
+
+        }
+
+        /* Styles for screens between 600px and 900px */
+        @media only screen and (min-width: 425px) and (max-width: 786px) {
+            body {
+                background-color: blanchedalmond;
+            }
+
+            /* CSS rules for screens with a width between 600px and 900px */
+            /* For example: */
+            .contMedium {
                 /* position: absolute;
-            bottom: 0;
-            right: 0; */
+                    bottom: 0;
+                    right: 0; */
                 display: flex;
                 flex-wrap: wrap;
-                gap: 3px;
+                gap: 7px;
                 justify-content: center;
+
             }
         }
+
+
+        .ContLargeMobile {
+            /* position: absolute;
+            bottom: 0;
+            right: 0; */
+            display: none;
+            /* flex-wrap: wrap;
+            gap: 3px;
+            justify-content: center; */
+        }
+
+        @media only screen and (max-width: 426px) {
+            body {
+                background-color: rgb(141, 90, 13)
+            }
+
+            /* CSS rules for screens with a width between 600px and 900px */
+            /* For example: */
+            .ContLargeMobile {
+                /* position: absolute;
+                    bottom: 0;
+                    right: 0; */
+                display: flex;
+                flex-wrap: wrap;
+                gap: 7px;
+                justify-content: center;
+
+            }
+        }
+
+        /* @media only screen and (max-width: 320px) {
+            .ContforMobile {
+              
+                display: flex;
+                flex-wrap: wrap;
+                gap: 7px;
+                justify-content: center;
+
+            }
+        } */
     </style>
 </head>
 
-<body onload="collectFunc()">
+<body>
 
-    <ul>
+    <div onload="collectFunc()" class="contExtraLarge">
+        <ul>
+            <li><img src="./images/IMG_8722.PNG" class="ImageLogo" /></li>
+            <li class="players" id="gameName"></li>
+        </ul>
+        <div>
+            <h1 id="heading">Tap the deck to spread the cards</h1>
+            <img src="./images/wpt-card-deck.png" alt="" class="ImageCard" id="CardImage" onclick="Multiple()" />
+        </div>
+        <!-- second Div -->
 
-        <li><img src="./images/IMG_8722.PNG" class="ImageLogo" /></li>
-        <li class="players" id="gameName"></li>
+        <div class="contExtraLarge" id="count">
 
-    </ul>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
 
-    <div>
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
 
-        <h1 id="heading">Tap the deck to spread the cards</h1>
-        <img src="./images/wpt-card-deck.png" alt="" class="ImageCard" id="CardImage" onclick="Multiple()" />
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card only" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
 
+    <!-- ////////try large/// -->
 
+    <div onload="collectFunc2()" class="contLarge">
+        <ul>
+            <li><img src="./images/IMG_8722.PNG" class="ImageLogo" /></li>
+            <li class="players" id="gameName"></li>
+        </ul>
+        <div>
+            <h1 id="heading">Tap the deck to spread the cards</h1>
+            <img src="./images/wpt-card-deck.png" alt="" class="ImageCard" id="CardImage" onclick="Multiple2()" />
+        </div>
+        <!-- second Div -->
 
+        <div class="contLarge" id="count">
 
-    <!-- second Div -->
-
-
-
-    <div class="contExtraLarge" id="count">
-
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
                 </div>
-                <div class="card-back flip-card-back">
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card only" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
 
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+
+    </div>
+
+    <!-- //////// try medium -->
+
+
+    <div onload="collectFunc3()" class="contMedium">
+        <ul>
+            <li><img src="./images/IMG_8722.PNG" class="ImageLogo" /></li>
+            <li class="players" id="gameName"></li>
+        </ul>
+        <div>
+            <h1 id="heading">Tap the deck to spread the cards</h1>
+            <img src="./images/wpt-card-deck.png" alt="" class="ImageCard" id="CardImage" onclick="Multiple3()" />
+        </div>
+        <!-- second Div -->
+
+        <div class="contMedium" id="count">
+
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
                 </div>
-                <div class="card-back flip-card-back">
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
 
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card only" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
 
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+
+    </div>
+
+    <!-- ///try mobile large -->
+
+    <div onload="collectFunc4()" class="ContLargeMobile">
+        <ul>
+            <li><img src="./images/IMG_8722.PNG" class="ImageLogo" /></li>
+            <li class="players" id="gameName"></li>
+        </ul>
+        <div>
+            <h1 id="heading">Tap the deck to spread the cards</h1>
+            <img src="./images/wpt-card-deck.png" alt="" class="ImageCard" id="CardImage" onclick="Multiple4()" />
+        </div>
+        <!-- second Div -->
+
+        <div class="ContLargeMobile" id="count">
+
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
                 </div>
-                <div class="card-back flip-card-back">
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
 
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card only" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card flip-card " onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
 
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
 
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card only" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
     </div>
 
 
-
-    <div class="contMobile" id="count">
-
-        <div class="card flip-card only " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card only" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card" onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-        <div class="card flip-card " onclick="performFunction()">
-            <div class="card-inner flip-card-inner">
-                <div class="card-front flip-card-front">
-
-                    <img src="./images/bbb.png" alt="Front Image" style="width: 100px; height: 100px" />
-                </div>
-                <div class="card-back flip-card-back">
-
-                    <img src="./images/frontimg.jpg" alt="Back Image" style="width: 100px; height: 100px" />
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script>
 
@@ -1490,6 +2855,19 @@
             SpreadFunc()
 
         }
+        function Multiple2() {
+            HideFirstDiv()
+            SpreadFunc()
+
+        } function Multiple3() {
+            HideFirstDiv()
+            SpreadFunc()
+
+        } function Multiple4() {
+            HideFirstDiv()
+            SpreadFunc()
+
+        }
 
         function HideFirstDiv() {
             document.getElementById('heading').style.display = 'none';
@@ -1498,6 +2876,69 @@
 
 
         function collectFunc() {
+            const container = document.getElementById('count');
+            const cards = container.querySelectorAll('.flip-card');
+            const firstCard = container.querySelector('.only');
+
+            // Get the position of the first card
+            const firstCardRect = firstCard.getBoundingClientRect();
+
+            // Set the position for all other cards
+            cards.forEach(card => {
+                const cardRect = card.getBoundingClientRect();
+                const offsetX = firstCardRect.left - cardRect.left;
+                const offsetY = firstCardRect.top - cardRect.top;
+                card.style.transition = 'transform 0.5s ease';
+                card.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+            });
+
+            // Store spread state in localStorage
+            localStorage.setItem('cardsSpread', 'true');
+        }
+
+        function collectFunc2() {
+            const container = document.getElementById('count');
+            const cards = container.querySelectorAll('.flip-card');
+            const firstCard = container.querySelector('.only');
+
+            // Get the position of the first card
+            const firstCardRect = firstCard.getBoundingClientRect();
+
+            // Set the position for all other cards
+            cards.forEach(card => {
+                const cardRect = card.getBoundingClientRect();
+                const offsetX = firstCardRect.left - cardRect.left;
+                const offsetY = firstCardRect.top - cardRect.top;
+                card.style.transition = 'transform 0.5s ease';
+                card.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+            });
+
+            // Store spread state in localStorage
+            localStorage.setItem('cardsSpread', 'true');
+        }
+
+        function collectFunc3() {
+            const container = document.getElementById('count');
+            const cards = container.querySelectorAll('.flip-card');
+            const firstCard = container.querySelector('.only');
+
+            // Get the position of the first card
+            const firstCardRect = firstCard.getBoundingClientRect();
+
+            // Set the position for all other cards
+            cards.forEach(card => {
+                const cardRect = card.getBoundingClientRect();
+                const offsetX = firstCardRect.left - cardRect.left;
+                const offsetY = firstCardRect.top - cardRect.top;
+                card.style.transition = 'transform 0.5s ease';
+                card.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+            });
+
+            // Store spread state in localStorage
+            localStorage.setItem('cardsSpread', 'true');
+        }
+
+        function collectFunc4() {
             const container = document.getElementById('count');
             const cards = container.querySelectorAll('.flip-card');
             const firstCard = container.querySelector('.only');
@@ -1531,6 +2972,9 @@
             const cardsSpread = localStorage.getItem('cardsSpread');
             if (cardsSpread === 'true') {
                 collectFunc(); // Spread cards if previously spread
+                collectFunc2()
+                collectFunc3()
+                collectFunc4()
             }
         });
 
@@ -1610,7 +3054,6 @@
             }
         }
 
-
         let heading = document.createElement("p");
         var randomNumber = Math.floor(Math.random() * 10) + 1;
 
@@ -1659,8 +3102,8 @@
                 image2.style.borderRadius = "10px";
 
 
-                 // Create the third image element
-                 var image3 = document.createElement("img");
+                // Create the third image element
+                var image3 = document.createElement("img");
                 image3.src = "./images/NEXT (3).png"; // Update with your image path
                 image3.style.position = "absolute";
                 image3.style.top = "150px"; // Adjust position as needed
@@ -1843,8 +3286,6 @@
 
 
 
-
-
         function selectWinnerFrom7Players(card) {
             card.querySelector(".card-inner").style.transform = "rotateY(180deg)";
 
@@ -1879,7 +3320,6 @@
                 image1.style.width = "500px";
 
                 // Create the second image element
-                // Create the second image element
                 var image2 = document.createElement("img");
                 image2.src = "./images/frontimg.jpg"; // Update with your image path
                 image2.style.position = "absolute";
@@ -1890,8 +3330,8 @@
                 image2.style.borderRadius = "10px";
 
 
-                 // Create the third image element
-                 var image3 = document.createElement("img");
+                // Create the third image element
+                var image3 = document.createElement("img");
                 image3.src = "./images/NEXT (3).png"; // Update with your image path
                 image3.style.position = "absolute";
                 image3.style.top = "150px"; // Adjust position as needed
@@ -1901,10 +3341,34 @@
                 image3.style.height = "120px";
 
 
+
+                // var div2 = document.createElement("div");
+                // div2.style.position = "absolute";
+                // div2.style.top = "180px";
+                // div2.style.right = "160px";
+                // div2.innerText = "You are win";
+                // div2.style.textAlign = "center";
+                // div2.style.color = "skyblue";
+                // div2.style.width = "50px";
+                // div2.style.height = "50px";
+                // div2.style.background = "skyblue";
+
+                // var div3 = document.createElement("div");
+                // div3.style.position = "absolute";
+                // div3.style.top = "210px";
+                // div3.style.right = "-110px";
+                // div3.innerText = "You are win";
+                // div3.style.textAlign = "center";
+                // div3.style.color = "skyblue";
+                // div3.style.width = "50px";
+                // div3.style.height = "50px";
+                // div3.style.background = "skyblue";
+
+
                 // Create the heading element
                 var heading = document.createElement("h1");
                 heading.style.position = "absolute";
-                heading.style.top = "150px";
+                heading.style.top = "160px";
                 heading.style.left = "-180px";
 
                 // heading.style.right = "-850px";
@@ -1912,23 +3376,26 @@
                 heading.style.textAlign = "center";
                 heading.style.color = "black";
                 heading.style.width = "280px";
-                heading.style.fontSize = "38px";
+                heading.style.fontSize = "25px";
+                heading.style.fontWeight = "light";
+
                 heading.style.opacity = "0.9";
-
-
-                heading.style.background = "white";
+                // heading.style.background = "white";
                 heading.style.zIndex = "80";
 
                 // Append the images and heading to the centered div
                 centeredDiv.appendChild(image1);
                 centeredDiv.appendChild(image2);
+                centeredDiv.appendChild(image3);
+
                 centeredDiv.appendChild(heading);
-                centeredDiv.appendChild(div2);
-                centeredDiv.appendChild(div3);
+                // centeredDiv.appendChild(div2);
+                // centeredDiv.appendChild(div3);
 
                 // Append the centered div to the document body
                 document.body.appendChild(overlay);
                 document.body.appendChild(centeredDiv);
+
 
                 // Start confetti animation
                 const W = window.innerWidth;
@@ -2082,8 +3549,7 @@
                 image1.style.width = "500px";
 
                 // Create the second image element
-              // Create the second image element
-              var image2 = document.createElement("img");
+                var image2 = document.createElement("img");
                 image2.src = "./images/frontimg.jpg"; // Update with your image path
                 image2.style.position = "absolute";
                 image2.style.bottom = "-150px"; // Adjust position as needed
@@ -2093,8 +3559,8 @@
                 image2.style.borderRadius = "10px";
 
 
-                 // Create the third image element
-                 var image3 = document.createElement("img");
+                // Create the third image element
+                var image3 = document.createElement("img");
                 image3.src = "./images/NEXT (3).png"; // Update with your image path
                 image3.style.position = "absolute";
                 image3.style.top = "150px"; // Adjust position as needed
@@ -2104,10 +3570,34 @@
                 image3.style.height = "120px";
 
 
+
+                // var div2 = document.createElement("div");
+                // div2.style.position = "absolute";
+                // div2.style.top = "180px";
+                // div2.style.right = "160px";
+                // div2.innerText = "You are win";
+                // div2.style.textAlign = "center";
+                // div2.style.color = "skyblue";
+                // div2.style.width = "50px";
+                // div2.style.height = "50px";
+                // div2.style.background = "skyblue";
+
+                // var div3 = document.createElement("div");
+                // div3.style.position = "absolute";
+                // div3.style.top = "210px";
+                // div3.style.right = "-110px";
+                // div3.innerText = "You are win";
+                // div3.style.textAlign = "center";
+                // div3.style.color = "skyblue";
+                // div3.style.width = "50px";
+                // div3.style.height = "50px";
+                // div3.style.background = "skyblue";
+
+
                 // Create the heading element
                 var heading = document.createElement("h1");
                 heading.style.position = "absolute";
-                heading.style.top = "150px";
+                heading.style.top = "160px";
                 heading.style.left = "-180px";
 
                 // heading.style.right = "-850px";
@@ -2115,19 +3605,21 @@
                 heading.style.textAlign = "center";
                 heading.style.color = "black";
                 heading.style.width = "280px";
-                heading.style.fontSize = "38px";
+                heading.style.fontSize = "25px";
+                heading.style.fontWeight = "light";
+
                 heading.style.opacity = "0.9";
-
-
-                heading.style.background = "white";
+                // heading.style.background = "white";
                 heading.style.zIndex = "80";
 
                 // Append the images and heading to the centered div
                 centeredDiv.appendChild(image1);
                 centeredDiv.appendChild(image2);
+                centeredDiv.appendChild(image3);
+
                 centeredDiv.appendChild(heading);
-                centeredDiv.appendChild(div2);
-                centeredDiv.appendChild(div3);
+                // centeredDiv.appendChild(div2);
+                // centeredDiv.appendChild(div3);
 
                 // Append the centered div to the document body
                 document.body.appendChild(overlay);
