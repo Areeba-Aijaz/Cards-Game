@@ -80,9 +80,6 @@
                 width: 130px;
             }
 
-            .players {
-                margin-right: 10px;
-            }
 
 
             h1 {
@@ -206,6 +203,9 @@
                 margin: 0 auto;
                 /* This centers the body horizontally */
             }
+
+
+            
         }
 
 
@@ -216,9 +216,7 @@
 
         /* Styles for screens between 600px and 900px */
         @media only screen and (min-width: 769px) and (max-width: 1024px) {
-            body {
-                background-color: rgb(190, 135, 51);
-            }
+            
 
             /* CSS rules for screens with a width between 600px and 900px */
             /* For example: */
@@ -233,7 +231,7 @@
 
             }
         }
-        
+
 
 
 
@@ -244,9 +242,7 @@
 
         /* Styles for screens between 600px and 900px */
         @media only screen and (min-width: 425px) and (max-width: 785px) {
-            body {
-                background-color: blanchedalmond;
-            }
+         
 
             /* CSS rules for screens with a width between 600px and 900px */
             /* For example: */
@@ -264,13 +260,11 @@
 
 
         .ContLargeMobile {
-           display: none;
+            display: none;
         }
 
         @media only screen and (max-width: 424px) {
-            body {
-                background-color: rgb(141, 90, 13)
-            }
+          
 
             /* CSS rules for screens with a width between 600px and 900px */
             /* For example: */
@@ -284,8 +278,8 @@
                 justify-content: center;
 
             }
+          
         }
-
     </style>
 </head>
 
@@ -1441,13 +1435,13 @@
         </div>
 
 
-    </div> 
+    </div>
 
 
-   <!-- //////// try medium -->
+    <!-- //////// try medium -->
 
 
-     <div onload="collectFunc3()" class="contMedium">
+    <div onload="collectFunc3()" class="contMedium">
         <ul>
             <li><img src="./images/IMG_8722.PNG" class="ImageLogo" /></li>
             <li class="players" id="gameName"></li>
@@ -2070,11 +2064,11 @@
         </div>
 
 
-    </div> 
+    </div>
 
     <!-- ///try mobile large -->
 
-     <div onload="collectFunc4()" class="ContLargeMobile">
+    <div onload="collectFunc4()" class="ContLargeMobile">
         <ul>
             <li><img src="./images/IMG_8722.PNG" class="ImageLogo" /></li>
             <li class="players" id="gameName"></li>
@@ -2697,7 +2691,7 @@
         </div>
 
 
-    </div> 
+    </div>
 
 
 
@@ -2735,7 +2729,7 @@
             numberToDisplay = 'Unknown';
         }
 
-        document.getElementById('gameName').innerText = numberToDisplay;
+        document.getElementsByClassName('players').innerText = numberToDisplay;
 
         function Multiple() {
             HideFirstDiv()
