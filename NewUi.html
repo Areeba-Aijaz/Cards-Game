@@ -2742,11 +2742,11 @@
         // Determine the number to display based on the game name
         var numberToDisplay;
         if (gameName === 'commercial') {
-            numberToDisplay = '7_Players';
+            numberToDisplay = 'Players:7';
         } else if (gameName === 'bomaderry') {
-            numberToDisplay = '13_Players';
+            numberToDisplay = 'Players:13';
         } else if (gameName === 'headlands') {
-            numberToDisplay = '6_Players';
+            numberToDisplay = 'Players:6';
         } else {
             numberToDisplay = 'Unknown';
         }
@@ -2868,12 +2868,12 @@
 
         function performFunction() {
             const card = event.currentTarget;
-            if (numberToDisplay === '7_Players') {
+            if (numberToDisplay === 'Players:7') {
                 selectWinnerFrom7Players(card)
-            } else if (numberToDisplay === '13_Players') {
+            } else if (numberToDisplay === 'Players:13') {
                 selectWinnerFrom13Players(card)
             }
-            else if (numberToDisplay === '6_Players') {
+            else if (numberToDisplay === 'Players:6') {
                 selectWinnerFrom6Players(card)
             }
         }
