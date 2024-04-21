@@ -197,40 +197,43 @@
                 justify-content: left;
                 margin-left: 25px;
 
+
+            }
+
+            body {
+                max-width: 1440px;
+                /* Set your desired maximum width here */
+                margin: 0 auto;
+                /* This centers the body horizontally */
             }
         }
 
 
-        .contLarge {
-            /* position: absolute;
-            bottom: 0;
-            right: 0; */
+        .CountLarge {
             display: none;
-            /* flex-wrap: wrap;
-            gap: 3px;
-            justify-content: center; */
+
         }
 
-
         /* Styles for screens between 600px and 900px */
-        @media only screen and (min-width: 786px) and (max-width: 1024px) {
+        @media only screen and (min-width: 769px) and (max-width: 1024px) {
             body {
-                background-color: aqua;
+                background-color: rgb(190, 135, 51);
             }
 
             /* CSS rules for screens with a width between 600px and 900px */
             /* For example: */
-            .contLarge {
+            .CountLarge {
                 /* position: absolute;
                     bottom: 0;
                     right: 0; */
                 display: flex;
                 flex-wrap: wrap;
-                gap: 7px;
-                justify-content: center;
+                gap: 0px;
+                justify-content: left;
 
             }
         }
+        
 
 
 
@@ -240,7 +243,7 @@
         }
 
         /* Styles for screens between 600px and 900px */
-        @media only screen and (min-width: 425px) and (max-width: 786px) {
+        @media only screen and (min-width: 425px) and (max-width: 785px) {
             body {
                 background-color: blanchedalmond;
             }
@@ -261,16 +264,10 @@
 
 
         .ContLargeMobile {
-            /* position: absolute;
-            bottom: 0;
-            right: 0; */
-            display: none;
-            /* flex-wrap: wrap;
-            gap: 3px;
-            justify-content: center; */
+           display: none;
         }
 
-        @media only screen and (max-width: 426px) {
+        @media only screen and (max-width: 424px) {
             body {
                 background-color: rgb(141, 90, 13)
             }
@@ -289,16 +286,6 @@
             }
         }
 
-        /* @media only screen and (max-width: 320px) {
-            .ContforMobile {
-              
-                display: flex;
-                flex-wrap: wrap;
-                gap: 7px;
-                justify-content: center;
-
-            }
-        } */
     </style>
 </head>
 
@@ -314,10 +301,10 @@
             <img src="./images/wpt-card-deck.png" alt="" class="ImageCard" id="CardImage" onclick="Multiple()" />
         </div>
 
-        <div class="contExtraLarge" id="count">
+        <div class="contExtraLarge" id="contExtraLarge">
 
-           
-          
+
+
             <div class="card flip-card " onclick="performFunction()">
                 <div class="card-inner flip-card-inner">
                     <div class="card-front flip-card-front">
@@ -826,13 +813,12 @@
             </div>
         </div>
 
-
     </div>
 
 
     <!-- ////////try large/// -->
 
-    <div onload="collectFunc()" class="contLarge">
+    <div onload="collectFunc3()" class="CountLarge">
         <ul>
             <li><img src="./images/IMG_8722.PNG" class="ImageLogo" /></li>
             <li class="players" id="gameName"></li>
@@ -841,9 +827,8 @@
             <h1 id="heading">Tap the deck to spread the cards</h1>
             <img src="./images/wpt-card-deck.png" alt="" class="ImageCard" id="CardImage" onclick="Multiple()" />
         </div>
-        <!-- second Div -->
 
-        <div class="contLarge" id="count">
+        <div class="CountLarge" id="CountLarge">
 
             <div class="card flip-card " onclick="performFunction()">
                 <div class="card-inner flip-card-inner">
@@ -1456,12 +1441,13 @@
         </div>
 
 
-    </div>
-
-    <!-- //////// try medium -->
+    </div> 
 
 
-    <div onload="collectFunc()" class="contMedium">
+   <!-- //////// try medium -->
+
+
+     <div onload="collectFunc3()" class="contMedium">
         <ul>
             <li><img src="./images/IMG_8722.PNG" class="ImageLogo" /></li>
             <li class="players" id="gameName"></li>
@@ -1470,9 +1456,8 @@
             <h1 id="heading">Tap the deck to spread the cards</h1>
             <img src="./images/wpt-card-deck.png" alt="" class="ImageCard" id="CardImage" onclick="Multiple()" />
         </div>
-        <!-- second Div -->
 
-        <div class="contMedium" id="count">
+        <div class="contMedium" id="contMedium">
 
             <div class="card flip-card " onclick="performFunction()">
                 <div class="card-inner flip-card-inner">
@@ -2085,11 +2070,11 @@
         </div>
 
 
-    </div>
+    </div> 
 
     <!-- ///try mobile large -->
 
-    <div onload="collectFunc()" class="ContLargeMobile">
+     <div onload="collectFunc4()" class="ContLargeMobile">
         <ul>
             <li><img src="./images/IMG_8722.PNG" class="ImageLogo" /></li>
             <li class="players" id="gameName"></li>
@@ -2098,9 +2083,8 @@
             <h1 id="heading">Tap the deck to spread the cards</h1>
             <img src="./images/wpt-card-deck.png" alt="" class="ImageCard" id="CardImage" onclick="Multiple()" />
         </div>
-        <!-- second Div -->
 
-        <div class="ContLargeMobile" id="count">
+        <div class="ContLargeMobile" id="ContLargeMobile">
 
             <div class="card flip-card " onclick="performFunction()">
                 <div class="card-inner flip-card-inner">
@@ -2713,7 +2697,7 @@
         </div>
 
 
-    </div>
+    </div> 
 
 
 
@@ -2766,7 +2750,71 @@
 
 
         function collectFunc() {
-            const container = document.getElementById('count');
+            const container = document.getElementById('contExtraLarge');
+            const cards = container.querySelectorAll('.flip-card');
+            const firstCard = container.querySelector('.only');
+
+            // Get the position of the first card
+            const firstCardRect = firstCard.getBoundingClientRect();
+
+            // Set the position for all other cards
+            cards.forEach(card => {
+                const cardRect = card.getBoundingClientRect();
+                const offsetX = firstCardRect.left - cardRect.left;
+                const offsetY = firstCardRect.top - cardRect.top;
+                card.style.transition = 'transform 0.5s ease';
+                card.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+            });
+
+            // Store spread state in localStorage
+            localStorage.setItem('cardsSpread', 'true');
+        }
+
+        function collectFunc2() {
+            const container = document.getElementById('CountLarge');
+            const cards = container.querySelectorAll('.flip-card');
+            const firstCard = container.querySelector('.only');
+
+            // Get the position of the first card
+            const firstCardRect = firstCard.getBoundingClientRect();
+
+            // Set the position for all other cards
+            cards.forEach(card => {
+                const cardRect = card.getBoundingClientRect();
+                const offsetX = firstCardRect.left - cardRect.left;
+                const offsetY = firstCardRect.top - cardRect.top;
+                card.style.transition = 'transform 0.5s ease';
+                card.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+            });
+
+            // Store spread state in localStorage
+            localStorage.setItem('cardsSpread', 'true');
+        }
+
+
+        function collectFunc3() {
+            const container = document.getElementById('contMedium');
+            const cards = container.querySelectorAll('.flip-card');
+            const firstCard = container.querySelector('.only');
+
+            // Get the position of the first card
+            const firstCardRect = firstCard.getBoundingClientRect();
+
+            // Set the position for all other cards
+            cards.forEach(card => {
+                const cardRect = card.getBoundingClientRect();
+                const offsetX = firstCardRect.left - cardRect.left;
+                const offsetY = firstCardRect.top - cardRect.top;
+                card.style.transition = 'transform 0.5s ease';
+                card.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+            });
+
+            // Store spread state in localStorage
+            localStorage.setItem('cardsSpread', 'true');
+        }
+
+        function collectFunc4() {
+            const container = document.getElementById('ContLargeMobile');
             const cards = container.querySelectorAll('.flip-card');
             const firstCard = container.querySelector('.only');
 
@@ -2801,6 +2849,31 @@
                 collectFunc(); // Spread cards if previously spread
             }
         });
+
+        // Check localStorage on page load
+        window.addEventListener('load', function () {
+            const cardsSpread = localStorage.getItem('cardsSpread');
+            if (cardsSpread === 'true') {
+                collectFunc2(); // Spread cards if previously spread
+            }
+        });
+
+        // Check localStorage on page load
+        window.addEventListener('load', function () {
+            const cardsSpread = localStorage.getItem('cardsSpread');
+            if (cardsSpread === 'true') {
+                collectFunc3(); // Spread cards if previously spread
+            }
+        });
+
+        // Check localStorage on page load
+        window.addEventListener('load', function () {
+            const cardsSpread = localStorage.getItem('cardsSpread');
+            if (cardsSpread === 'true') {
+                collectFunc4(); // Spread cards if previously spread
+            }
+        });
+
 
 
         function SpreadFunc() {
