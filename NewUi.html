@@ -64,11 +64,12 @@
                 font-size: 35px;
 
             }
+
             .ImageCard {
-            height: 200px;
-            top: 65%;
-            right: 4%;
-        }
+                height: 200px;
+                top: 65%;
+                right: 4%;
+            }
         }
 
 
@@ -88,8 +89,11 @@
 
         /* Media query for mobile screens */
         @media only screen and (max-width: 425px) {
-            .ImageLogo {
-                width: 130px;
+            .ImageCard {
+                width: 150px;
+                height: 200px;
+                top: 33%;
+                right: 3%;
             }
 
 
@@ -99,6 +103,7 @@
                 font-size: 21px;
 
             }
+
             .players {
                 margin-left: 20px;
 
@@ -113,6 +118,14 @@
                 font-size: 21px;
 
             }
+
+
+
+            .players {
+                margin-left: 15px;
+
+
+            }
         }
 
         @media only screen and (max-width: 320px) {
@@ -121,6 +134,13 @@
                 left: 13%;
                 font-size: 15px;
 
+            }
+
+            .ImageCard {
+                width: 150px;
+                height: 200px;
+                top: 48%;
+                right: 3%;
             }
         }
 
@@ -299,6 +319,7 @@
 
 
             }
+
             body {
                 max-width: 1024px;
                 max-height: 738px;
@@ -315,7 +336,7 @@
         }
 
         /* Styles for screens between 600px and 900px */
-        @media only screen and (min-width: 425px) and (max-width: 785px) {
+        @media only screen and (min-width: 426px) and (max-width: 785px) {
 
 
             /* CSS rules for screens with a width between 600px and 900px */
@@ -334,13 +355,13 @@
 
             .ImageCard {
                 width: 150px;
-            height: 200px;
-            top: 35%;
-            right: 3%;
-        }
+                height: 200px;
+                top: 35%;
+                right: 3%;
+            }
 
             .players {
-                margin-left: 400px;
+                margin-left: 300px;
 
 
             }
@@ -351,7 +372,7 @@
             display: none;
         }
 
-        @media only screen and (max-width: 424px) {
+        @media only screen and (max-width: 425px) {
 
 
             /* CSS rules for screens with a width between 600px and 900px */
@@ -362,16 +383,18 @@
                     right: 0; */
                 display: flex;
                 flex-wrap: wrap;
-                gap: 7px;
+                gap: 3px;
                 justify-content: left;
 
             }
 
             .players {
-                margin-left: 80px;
+                margin-left: 100px;
 
 
             }
+
+
 
         }
     </style>
@@ -2034,7 +2057,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card flip-card4" onclick="performFunction()">
+            <div class="card flip-card4 " onclick="performFunction()">
                 <div class="card-inner flip-card-inner">
                     <div class="card-front flip-card-front">
                         <img src="./images/bbb.png" alt="Front Image" style="width: 95px; height: 125px" />
@@ -2090,7 +2113,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card flip-card4" onclick="performFunction()">
+            <div class="card flip-card4 only" onclick="performFunction()">
                 <div class="card-inner flip-card-inner">
                     <div class="card-front flip-card-front">
 
@@ -2142,18 +2165,6 @@
                         <img src="./images/bbb.png" alt="Front Image" style="width: 95px; height: 125px" />
                     </div>
                     <div class="card-back flip-card-back">
-                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 95px; height: 125px" />
-                    </div>
-                </div>
-            </div>
-            <div class="card flip-card4" onclick="performFunction()">
-                <div class="card-inner flip-card-inner">
-                    <div class="card-front flip-card-front">
-
-                        <img src="./images/bbb.png" alt="Front Image" style="width: 95px; height: 125px" />
-                    </div>
-                    <div class="card-back flip-card-back">
-
                         <img src="./images/frontimg.jpg" alt="Back Image" style="width: 95px; height: 125px" />
                     </div>
                 </div>
@@ -2398,7 +2409,19 @@
                     </div>
                 </div>
             </div>
-            <div class="card only flip-card4" onclick="performFunction()">
+            <div class="card flip-card4" onclick="performFunction()">
+                <div class="card-inner flip-card-inner">
+                    <div class="card-front flip-card-front">
+
+                        <img src="./images/bbb.png" alt="Front Image" style="width: 95px; height: 125px" />
+                    </div>
+                    <div class="card-back flip-card-back">
+
+                        <img src="./images/frontimg.jpg" alt="Back Image" style="width: 95px; height: 125px" />
+                    </div>
+                </div>
+            </div>
+            <div class="card  flip-card4" onclick="performFunction()">
                 <div class="card-inner flip-card-inner">
                     <div class="card-front flip-card-front">
 
@@ -2733,44 +2756,45 @@
         function getRandomNumber(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
-        var randomNumber13 = getRandomNumber(1, 13);
-        var randomNumber7 = getRandomNumber(1, 7);
-        var randomNumber6 = getRandomNumber(1, 6);
+        var randomNumber13 = getRandomNumber(1, 15);
+        var randomNumber7 = getRandomNumber(1, 9);
+        var randomNumber6 = getRandomNumber(1, 8);
 
         let commercialPlayersName = [
-            "",
-            'Lucy Sweet',
-            'Tony Fleith',
-            'Joe Brown',
-            'Troy Sivan',
-            'Lilly Di',
-            'Moah Gibs',
-            'Mitch Fanning']
+            'Lucy Sweet Just Won',
+            'Tony Fleith  Just Won',
+            'Joe Brown  Just Won',
+            'Troy Sivan  Just Won',
+            'Game is a draw',
+            'Lilly Di  Just Won',
+            'Moah Gibs  Just Won',
+            'Game is a draw',
+            'Mitch Fanning  Just Won']
         let bomaderryPlayersName = [
-            "",
-
-            'Jadan Roxburgh',
-            'Maugan Cohen',
-            'John Bling',
-            'Lucy Sweet',
-            'Tony Fleith',
-            'Joe Brown',
-            'Troy Sivan',
-            'Lilly Di',
-            'Moah Gibs',
-            'Mitch Fanning',
-            'Stece Smith',
-            'Debbie Monie',
-            'Philip York']
+            'Game is a draw',
+            'Jadan Roxburgh  Just Won',
+            'Maugan Cohen  Just Won',
+            'John Bling  Just Won',
+            'Lucy Sweet  Just Won',
+            'Tony Fleith  Just Won',
+            'Joe Brown  Just Won',
+            'Troy Sivan  Just Won',
+            'Lilly Di  Just Won',
+            'Moah Gibs  Just Won',
+            'Mitch Fanning  Just Won',
+            'Stece Smith  Just Won',
+            'Game is a draw',
+            'Debbie Monie  Just Won',
+            'Philip York  Just Won']
         let headlandsPlayersName = [
-            "",
-
-            'Moah Gibs',
-            'Mitch Fanning',
-            'Stece Smith',
-            'Debbie Monie',
-            'Philip York',
-            'Lucy Sweet']
+            'Game is a draw',
+            'Moah Gibs  Just Won',
+            'Mitch Fanning  Just Won',
+            'Stece Smith  Just Won',
+            'Debbie Monie  Just Won',
+            'Game is a draw',
+            'Philip York  Just Won',
+            'Lucy Sweet  Just Won']
 
         function performFunction() {
             const card = event.currentTarget;
@@ -2874,7 +2898,7 @@
                 heading.style.left = "-180px";
 
                 // heading.style.right = "-850px";
-                heading.innerText = "Player " + bomaderryPlayersName[randomNumber13] + " is Winner";
+                heading.innerText = bomaderryPlayersName[randomNumber13];
                 heading.style.textAlign = "center";
                 heading.style.color = "black";
                 heading.style.width = "280px";
@@ -3102,7 +3126,7 @@
                 heading.style.left = "-180px";
 
                 // heading.style.right = "-850px";
-                heading.innerText = "Player " + commercialPlayersName[randomNumber7] + " is Winner";
+                heading.innerText = commercialPlayersName[randomNumber7];
                 heading.style.textAlign = "center";
                 heading.style.color = "black";
                 heading.style.width = "280px";
@@ -3331,7 +3355,7 @@
                 heading.style.left = "-180px";
 
                 // heading.style.right = "-850px";
-                heading.innerText = "Player " + headlandsPlayersName[randomNumber6] + " is Winner";
+                heading.innerText = headlandsPlayersName[randomNumber6];
                 heading.style.textAlign = "center";
                 heading.style.color = "black";
                 heading.style.width = "280px";
