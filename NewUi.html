@@ -2760,41 +2760,38 @@
         var randomNumber7 = getRandomNumber(1, 9);
         var randomNumber6 = getRandomNumber(1, 8);
 
+
+
         let commercialPlayersName = [
-            'Lucy Sweet Just Won',
-            'Tony Fleith  Just Won',
-            'Joe Brown  Just Won',
-            'Troy Sivan  Just Won',
-            'Game is a draw',
-            'Lilly Di  Just Won',
-            'Moah Gibs  Just Won',
-            'Game is a draw',
-            'Mitch Fanning  Just Won']
+            'Lucy Swee',
+            'Tony Fleith',
+            'Joe Brown',
+            'Troy Sivan',
+            'Lilly Di',
+            'Moah Gibs',
+            'Mitch Fanning']
         let bomaderryPlayersName = [
-            'Game is a draw',
-            'Jadan Roxburgh  Just Won',
-            'Maugan Cohen  Just Won',
-            'John Bling  Just Won',
-            'Lucy Sweet  Just Won',
-            'Tony Fleith  Just Won',
-            'Joe Brown  Just Won',
-            'Troy Sivan  Just Won',
-            'Lilly Di  Just Won',
-            'Moah Gibs  Just Won',
-            'Mitch Fanning  Just Won',
-            'Stece Smith  Just Won',
-            'Game is a draw',
-            'Debbie Monie  Just Won',
-            'Philip York  Just Won']
+            "",
+            'Jadan Roxburgh',
+            'Maugan Cohen',
+            'John Bling',
+            'Lucy Sweet',
+            'Tony Fleith',
+            'Joe Brown',
+            'Troy Sivan',
+            'Lilly Di',
+            'Moah Gibs',
+            'Mitch Fanning',
+            'Stece Smith',
+            'Debbie Monie',
+            'Philip York']
         let headlandsPlayersName = [
-            'Game is a draw',
-            'Moah Gibs  Just Won',
-            'Mitch Fanning  Just Won',
-            'Stece Smith  Just Won',
-            'Debbie Monie  Just Won',
-            'Game is a draw',
-            'Philip York  Just Won',
-            'Lucy Sweet  Just Won']
+            'Moah Gibs',
+            'Mitch Fanning',
+            'Stece Smith',
+            'Debbie Monie',
+            'Philip York',
+            'Lucy Sweet']
 
         function performFunction() {
             const card = event.currentTarget;
@@ -2864,7 +2861,7 @@
                 image3.style.left = "-230px"; // Adjust position as needed
                 image3.style.zIndex = "30";
                 image3.style.width = "370px";
-                image3.style.height = "120px";
+                image3.style.height = "130px";
 
 
 
@@ -2896,9 +2893,7 @@
                 heading.style.position = "absolute";
                 heading.style.top = "160px";
                 heading.style.left = "-180px";
-
                 // heading.style.right = "-850px";
-                heading.innerText = bomaderryPlayersName[randomNumber13];
                 heading.style.textAlign = "center";
                 heading.style.color = "black";
                 heading.style.width = "280px";
@@ -2908,6 +2903,146 @@
                 heading.style.opacity = "0.9";
                 // heading.style.background = "white";
                 heading.style.zIndex = "80";
+                if (randomNumber13 == "1") {
+                    // heading.innerText = bomaderryPlayersName[randomNumber13] + " Just Won";
+                    heading.innerText = 'Jadan Roxburgh Just Won'
+
+
+                } else if (randomNumber13 == "2") {
+                    heading.innerText = 'Maugan Cohen Just Won'
+
+
+                } else if (randomNumber13 == "3") {
+                    heading.innerText = 'John Bling Just Won'
+
+
+                } else if (randomNumber13 == "4") {
+                    heading.innerText = 'Lucy Sweet Just Won'
+
+                } else if (randomNumber13 == "5") {
+                    heading.innerText = 'Tony Fleith Just Won'
+
+
+
+                } else if (randomNumber13 == "6") {
+                    heading.innerText = 'Joe Brown Just Won'
+
+
+                } else if (randomNumber13 == "7") {
+                    heading.innerText = 'Troy Sivan Just Won'
+
+
+                } else if (randomNumber13 == "8") {
+                    heading.innerText = 'Lilly Di Just Won'
+
+
+                } else if (randomNumber13 == "9") {
+                    heading.innerText = 'Moah Gibs Just Won'
+
+
+                } else if (randomNumber13 == "10") {
+                    heading.innerText = 'Mitch Fanning Just Won'
+
+
+                } else if (randomNumber13 == "11") {
+                    heading.innerText = 'Stece Smith Just Won'
+
+
+                } else if (randomNumber13 == "12") {
+                    heading.innerText = 'Debbie Monie Just Won'
+
+
+                } else if (randomNumber13 == "13") {
+                    heading.innerText = 'Philip York Just Won'
+
+                } else if (randomNumber13 == "14") {
+                    heading.innerText = "Game Draw"
+
+                } else {
+                    heading.innerText = "Game Draw"
+
+                }
+
+                ///////
+
+                // Create the heading element
+                var heading2 = document.createElement("h1");
+                heading2.style.position = "absolute";
+                heading2.style.top = "-120px";
+                heading2.style.left = "-130px";
+
+                // heading2.style.right = "-850px";
+                heading2.style.textAlign = "center";
+                heading2.style.color = "black";
+                heading2.style.width = "280px";
+                heading2.style.fontSize = "15px";
+                heading2.style.fontWeight = "light";
+
+                heading2.style.opacity = "0.9";
+                // heading2.style.background = "white";
+                heading2.style.zIndex = "80";
+
+                if (randomNumber13 == "1") {
+                    // heading2.innerText =  bomaderryPlayersName[randomNumber13];
+                    heading2.innerText = 'Jadan Roxburgh'
+
+
+                } else if (randomNumber13 == "2") {
+                    heading2.innerText = 'Maugan Cohen'
+
+
+                } else if (randomNumber13 == "3") {
+                    heading2.innerText = 'John Bling'
+
+
+                } else if (randomNumber13 == "4") {
+                    heading2.innerText = 'Lucy Sweet'
+
+                } else if (randomNumber13 == "5") {
+                    heading2.innerText = 'Tony Fleith'
+
+
+
+                } else if (randomNumber13 == "6") {
+                    heading2.innerText = 'Joe Brown'
+
+
+                } else if (randomNumber13 == "7") {
+                    heading2.innerText = 'Troy Sivan'
+
+
+                } else if (randomNumber13 == "8") {
+                    heading2.innerText = 'Lilly Di'
+
+
+                } else if (randomNumber13 == "9") {
+                    heading2.innerText = 'Moah Gibs'
+
+
+                } else if (randomNumber13 == "10") {
+                    heading2.innerText = 'Mitch Fanning'
+
+
+                } else if (randomNumber13 == "11") {
+                    heading2.innerText = 'Stece Smith'
+
+
+                } else if (randomNumber13 == "12") {
+                    heading2.innerText = 'Debbie Monie'
+
+
+                } else if (randomNumber13 == "13") {
+                    heading2.innerText = 'Philip York'
+
+                } else if (randomNumber13 == "14") {
+                    heading2.innerText = ""
+
+                } else {
+                    heading2.innerText = ""
+
+                }
+
+                ///////
 
                 // Append the images and heading to the centered div
                 centeredDiv.appendChild(image1);
@@ -2915,6 +3050,7 @@
                 centeredDiv.appendChild(image3);
 
                 centeredDiv.appendChild(heading);
+                centeredDiv.appendChild(heading2);
                 // centeredDiv.appendChild(div2);
                 // centeredDiv.appendChild(div3);
 
@@ -3036,9 +3172,6 @@
 
             }, 2000);
         }
-
-
-
 
         function selectWinnerFrom7Players(card) {
             card.querySelector(".card-inner").style.transform = "rotateY(180deg)";
@@ -3126,16 +3259,77 @@
                 heading.style.left = "-180px";
 
                 // heading.style.right = "-850px";
-                heading.innerText = commercialPlayersName[randomNumber7];
                 heading.style.textAlign = "center";
                 heading.style.color = "black";
                 heading.style.width = "280px";
                 heading.style.fontSize = "25px";
                 heading.style.fontWeight = "light";
-
+                
                 heading.style.opacity = "0.9";
                 // heading.style.background = "white";
                 heading.style.zIndex = "80";
+                
+                
+                if (randomNumber7 == "1") {
+                    // heading.innerText = commercialPlayersName[randomNumber7] + " just Won";;
+                    heading.innerText = " 'Lucy Swee just Won";
+                } else if (randomNumber7 == "2") {
+                    heading.innerText = "Tony Fleith just Won";
+                } else if (randomNumber7 == "3") {
+                    heading.innerText = " 'Joe Brown just Won";
+                } else if (randomNumber7 == "4") {
+                    heading.innerText = "Troy Sivan just Won";
+                } else if (randomNumber7 == "5") {
+                    heading.innerText = " 'Lilly Di just Won";
+                } else if (randomNumber7 == "6") {
+                    heading.innerText = "'Moah Gibs just Won";
+                } else if (randomNumber7 == "7") {
+                    heading.innerText = "Mitch Fanning just Won";
+                } else if (randomNumber7 == "8") {
+                    heading.innerText = "Game Draw";
+                } else {
+                    heading.innerText = "Game Draw";
+                }
+
+                ///////
+
+                // Create the heading element
+                var heading2 = document.createElement("h1");
+                heading2.style.position = "absolute";
+                heading2.style.top = "-110px";
+                heading2.style.left = "-130px";
+
+                // heading2.style.right = "-850px";
+                heading2.style.textAlign = "center";
+                heading2.style.color = "black";
+                heading2.style.width = "280px";
+                heading2.style.fontSize = "15px";
+                heading2.style.fontWeight = "light";
+                
+                heading2.style.opacity = "0.9";
+                // heading2.style.background = "white";
+                heading2.style.zIndex = "80";
+                
+                if (randomNumber7 == "1") {
+                    // heading2.innerText = commercialPlayersName[randomNumber7]
+                    heading2.innerText = "Lucy Swee";
+                } else if (randomNumber7 == "2") {
+                    heading2.innerText = "Tony Fleith";
+                } else if (randomNumber7 == "3") {
+                    heading2.innerText = "Joe Brown";
+                } else if (randomNumber7 == "4") {
+                    heading2.innerText = "Troy Sivan";
+                } else if (randomNumber7 == "5") {
+                    heading2.innerText = "Lilly Di";
+                } else if (randomNumber7 == "6") {
+                    heading2.innerText = "Moah Gibs";
+                } else if (randomNumber7 == "7") {
+                    heading2.innerText = "Mitch Fanning";
+                } else if (randomNumber7 == "8") {
+                    heading2.innerText = " ";
+                } else {
+                    heading2.innerText = " ";
+                }
 
                 // Append the images and heading to the centered div
                 centeredDiv.appendChild(image1);
@@ -3143,6 +3337,8 @@
                 centeredDiv.appendChild(image3);
 
                 centeredDiv.appendChild(heading);
+                centeredDiv.appendChild(heading2);
+
                 // centeredDiv.appendChild(div2);
                 // centeredDiv.appendChild(div3);
 
@@ -3266,9 +3462,6 @@
             }, 2000);
         }
 
-
-
-
         function selectWinnerFrom6Players(card) {
             card.querySelector(".card-inner").style.transform = "rotateY(180deg)";
 
@@ -3355,16 +3548,84 @@
                 heading.style.left = "-180px";
 
                 // heading.style.right = "-850px";
-                heading.innerText = headlandsPlayersName[randomNumber6];
                 heading.style.textAlign = "center";
                 heading.style.color = "black";
                 heading.style.width = "280px";
                 heading.style.fontSize = "25px";
                 heading.style.fontWeight = "light";
-
+                
                 heading.style.opacity = "0.9";
                 // heading.style.background = "white";
                 heading.style.zIndex = "80";
+                
+                if (randomNumber7 == "1") {
+                    // heading.innerText = headlandsPlayersName[randomNumber6] + " just Won";
+                    heading.innerText = "Moah Gibs Just Won"
+           
+                } else if (randomNumber7 == "2") {
+                    heading.innerText = "Mitch Fanning Just Won"
+          
+                } else if (randomNumber7 == "3") {
+                    heading.innerText = "Stece Smith Just Won"
+         
+                } else if (randomNumber7 == "4") {
+                    heading.innerText = "Debbie Monie Just Won"
+         
+                } else if (randomNumber7 == "5") {
+                    heading.innerText = "Philip York Just Won"
+           
+                } else if (randomNumber7 == "6") {
+                    heading.innerText = "Lucy Sweet Just Won"
+                } else if (randomNumber7 == "7") {
+                    heading.innerText = " ";
+                }else {
+                    heading.innerText = " ";
+                }
+
+                ///////
+
+                // Create the heading element
+                var heading2 = document.createElement("h1");
+                heading2.style.position = "absolute";
+                heading2.style.top = "-110px";
+                heading2.style.left = "-140px";
+
+                // heading2.style.right = "-850px";
+                // heading2.innerText = headlandsPlayersName[randomNumber6];
+                heading2.style.textAlign = "center";
+                heading2.style.color = "black";
+                heading2.style.width = "280px";
+                heading2.style.fontSize = "15px";
+                heading2.style.fontWeight = "light";
+
+                heading2.style.opacity = "0.9";
+                // heading2.style.background = "white";
+                heading2.style.zIndex = "80";
+
+                if (randomNumber7 == "1") {
+                    // heading.innerText = headlandsPlayersName[randomNumber6] + " just Won";
+                    heading2.innerText = "Moah Gibs"
+           
+                } else if (randomNumber7 == "2") {
+                    heading2.innerText = "Mitch Fanning"
+          
+                } else if (randomNumber7 == "3") {
+                    heading2.innerText = "Stece Smith"
+         
+                } else if (randomNumber7 == "4") {
+                    heading2.innerText = "Debbie Monie"
+         
+                } else if (randomNumber7 == "5") {
+                    heading2.innerText = "Philip York"
+           
+                } else if (randomNumber7 == "6") {
+                    heading2.innerText = "Lucy Sweet"
+                } else if (randomNumber7 == "7") {
+                    heading2.innerText = "Game Draw ";
+                }else {
+                    heading2.innerText = "Game Draw ";
+                }
+
 
                 // Append the images and heading to the centered div
                 centeredDiv.appendChild(image1);
@@ -3372,6 +3633,8 @@
                 centeredDiv.appendChild(image3);
 
                 centeredDiv.appendChild(heading);
+                centeredDiv.appendChild(heading2);
+
                 // centeredDiv.appendChild(div2);
                 // centeredDiv.appendChild(div3);
 
